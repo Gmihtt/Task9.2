@@ -2,6 +2,7 @@
 
 class Armor {
 public:
+    Armor() : num(0) {}
     Armor(int num) : num(num) {
         std::cout << "Armor; count: " << num << std::endl;
     }
@@ -11,6 +12,7 @@ public:
 
 class Knife {
 public:
+    Knife() : num(0) {}
     Knife(int num) : num(num) {
         std::cout << "Knife; count: " << num << std::endl;
     }
@@ -20,6 +22,7 @@ public:
 
 class Pistol {
 public:
+    Pistol() : num(0) {}
     Pistol(int num) : num(num) {
         std::cout << "Pistol; count: " << num << std::endl;
     }
@@ -29,6 +32,7 @@ public:
 
 class Gun {
 public:
+    Gun() : num(0) {}
     Gun(int num) : num(num) {
         std::cout << "Gun; count: " << num << std::endl;
     }
@@ -38,6 +42,7 @@ public:
 
 class Grenade {
 public:
+    Grenade() : num(0) {}
     Grenade(int num) : num(num) {
         std::cout << "Grenade; count: " << num << std::endl;
     }
@@ -47,6 +52,7 @@ public:
 
 class SappersKit {
 public:
+    SappersKit() : num(0) {}
     SappersKit(int num) : num(num) {
         std::cout << "SappersKit; count: " << num << std::endl;
     }
@@ -56,6 +62,7 @@ public:
 
 class Bomb {
 public:
+    Bomb() : num(0) {}
     Bomb(int num) : num(num) {
         std::cout << "Bomb; count: " << num << std::endl;
     }
@@ -65,29 +72,14 @@ public:
 
 class Person {
 public:
-    Person(
-            Armor armor,
-            Knife knife,
-            Pistol pistol,
-            Gun gun,
-            Grenade grenade,
-            SappersKit sappersKit,
-            Bomb bomb) :
-            armor(armor),
-            knife(knife),
-            pistol(pistol),
-            gun(gun),
-            grenade(grenade),
-            sappersKit(sappersKit),
-            bomb(bomb) {}
-
-    Armor armor = Armor(0);
-    Knife knife;
-    Pistol pistol;
-    Gun gun;
-    Grenade grenade;
-    SappersKit sappersKit;
-    Bomb bomb;
+    Person() = default;
+    Armor armor = Armor();
+    Knife knife = Knife();
+    Pistol pistol = Pistol();
+    Gun gun = Gun();
+    Grenade grenade = Grenade();
+    SappersKit sappersKit = SappersKit();
+    Bomb bomb = Bomb();
 };
 
 class Builder {
@@ -130,26 +122,19 @@ public:
     }
 
     Person build() {
-        Person person = Person(
-                armor_,
-                knife_,
-                pistol_,
-                gun_,
-                grenade_,
-                sappersKit_,
-                bomb_);
+        Person person;
         return buildPerson(person);
     }
 
 private:
     friend Person;
-    Armor armor_ = Armor(0);
-    Knife knife_ = Knife(0);
-    Pistol pistol_ = Pistol(0);
-    Gun gun_ = Gun(0);
-    Grenade grenade_ = Grenade(0);
-    SappersKit sappersKit_ = SappersKit(0);
-    Bomb bomb_ = Bomb(0);
+    Armor armor_ = Armor();
+    Knife knife_ = Knife();
+    Pistol pistol_ = Pistol();
+    Gun gun_ = Gun();
+    Grenade grenade_ = Grenade();
+    SappersKit sappersKit_ = SappersKit();
+    Bomb bomb_ = Bomb();
 
     Person &buildPerson(Person &person) {
         person.armor = armor_;

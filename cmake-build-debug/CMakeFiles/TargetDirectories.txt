@@ -1,0 +1,3 @@
+/home/grigoriy/CSC/PracticeMin/CS/9.2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/grigoriy/CSC/PracticeMin/CS/9.2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/grigoriy/CSC/PracticeMin/CS/9.2/cmake-build-debug/CMakeFiles/9_2.dir
